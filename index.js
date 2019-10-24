@@ -4,7 +4,7 @@ const xmlHttpRequest = (() => {
         for(let i = 0; i <= results.length - 1; i++){
             document.getElementById('container').innerHTML += `
             <div class="jobTitle" id="job-${i}">${results[i].jobTitle}</div>
-            <div class="hide">${results[i].jobDescription}</div>
+            <div class="jobPara hide">${results[i].jobDescription}</div>
             `
         }
     }
@@ -26,7 +26,7 @@ const xmlHttpRequest = (() => {
 
     document.addEventListener('click', (e) => {
         if(e.target.className === 'jobTitle') {
-            const el = document.getElementById(event.target.id).nextSibling.nextSibling;
+            const el = document.getElementById(e.target.id).nextSibling.nextSibling;
 
             if(el.classList.contains('hide')) {
                 el.classList.remove("hide");

@@ -10,7 +10,7 @@ const xmlHttpRequest = (() => {
     }
 
     const getData = async (url) => {
-        const response = await fetch(url);
+        const response = await fetch(url + '?locationName=London');
         const data = await response.json();
         
         const results = data.results.filter((item, i) => {
@@ -27,8 +27,14 @@ const xmlHttpRequest = (() => {
     document.addEventListener('click', (e) => {
         if(e.target.className === 'jobTitle') {
             const el = document.getElementById(e.target.id).nextSibling.nextSibling;
+            const jobPara = document.getElementsByClassName('jobPara');
 
             if(el.classList.contains('hide')) {
+                [...jobPara].forEach(element => {
+                    if(!element.classList.contains('hide')) {
+                        element.classList.add("hide");
+                    }
+                });
                 el.classList.remove("hide");
             }else {
                 el.classList.add("hide");

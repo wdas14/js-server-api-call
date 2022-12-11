@@ -4,7 +4,7 @@
   "description": "To start: \r - go to server folder\r - run command node index.js\r - copy index.html path, paste in browser",
   "main": "index.js",
   "dependencies": {
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "request": "^2.88.0"
   },
   "devDependencies": {},
